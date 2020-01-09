@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="Alsatoju">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './styles/foundation.min.css';
+import './styles/custom.css';
+
+import Routes from './routes';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      appName: "Alsatoju",
+      home: false
+    }
+  }
+
+  render () {
+    return (
+      <div className="off-canvas-wrapper">
+        <div className="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+          <div className="off-canvas-content" data-off-canvas-content>
+            <Header />
+            <Routes name={this.state.appName}/>
+            <hr/>
+            <Footer />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
