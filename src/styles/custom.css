@@ -1,0 +1,39 @@
+.oneLightest {
+    color: #B8D640;
+}
+
+.oneLight {
+    color: #A3BD3C;
+}
+
+.one, .primary {
+    color: #8DA336 !important;
+}
+
+.oneDark {
+    color: #778930;
+}
+
+.oneDarkest {
+    color: #627029;
+}
+
+.twoLightest {
+    color: #9B2E8E;
+}
+
+.twoLight {
+    color: #882B7D;
+}
+
+.two {
+    color: #76276C;
+}
+
+.twoDark {
+    color: #63235B;
+}
+
+.twoDarkest {
+    color: #511E4B;
+}
