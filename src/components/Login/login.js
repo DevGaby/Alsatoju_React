@@ -1,32 +1,33 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom';
 import { CrudService } from '../../services/CrudService'
 import './Login.css'
 
 class Login extends Component {
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       email: 'alanlima898@gmail.com',
       password: 'password',
       redirectToReferrer: false,
     }
-    this.login = this.login.bind(this)
-    this.onChange = this.onChange.bind(this)
   }
 
   login () {
     if (this.state.email && this.state.password) {
-      CrudService('login', 'POST', this.state)
-      .then((result) => {
+      CrudService('login', 'POST', this.state).then((result) => {
         if (result.token) {
           sessionStorage.setItem('token', result.token)
           this.setState({ redirectToReferrer: true })
           console.log(result.token)
+          this.props.history.push('/home')
         }
       })
     }
+  }
+
+  redirect () {
+    this.setState({ redirectToReferrer: true })
   }
 
   /**
@@ -39,11 +40,8 @@ class Login extends Component {
   }
 
   render () {
-    if (this.state.redirectToReferrer) {
-      // return redirect -> home
-    }
-    if (sessionStorage.getItem('token')) {
-      // return redirect -> home
+    if (this.state.redirectToReferrer || sessionStorage.getItem('token')) {
+      this.props.history.push('/home')
     }
 
     return (
@@ -52,12 +50,15 @@ class Login extends Component {
           <h2>Login Page </h2>
           <label>Email</label>
           <input type="text" name="email" placeholder="Email"
-                 onChange={this.onChange}/>
+                 onChange={this.onChange.bind(this)}/>
           <label>Password</label>
           <input type="password" name="password" placeholder="Password"
-                 onChange={this.onChange}/>
+                 onChange={this.onChange.bind(this)}/>
           <input type="submit" value="login" className="button success"
-                 onClick={this.login}/>
+                 onClick={this.login.bind(this)}/>
+          <button className="button secondary"
+                  onClick={this.redirect.bind(this)}>Retour
+          </button>
         </div>
       </div>
     )

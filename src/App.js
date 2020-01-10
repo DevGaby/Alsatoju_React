@@ -9,11 +9,10 @@ import Footer from './components/Footer/Footer'
 
 class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       appName: "Alsatoju",
-      home: false
     }
   }
 
@@ -21,10 +20,9 @@ class App extends Component {
     return (
       <div className="off-canvas-wrapper">
         <div className="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-
           <div className="off-canvas-content" data-off-canvas-content>
             <Header />
-            <Routes name={this.state.appName}/>
+            <Routes />
             <hr/>
             <Footer />
           </div>
