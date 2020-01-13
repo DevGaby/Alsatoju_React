@@ -18,16 +18,25 @@ class Home extends Component {
 
   logout () {
     console.log('logout()')
-    sessionStorage.setItem('token', null)
+    sessionStorage.removeItem('token')
     this.setState({ redirect: 0, token: null })
+  }
+
+  signUp () {
+    console.log('signuUp')
+    this.setState({ redirect: 2 })
   }
 
   render () {
     console.log('token ' + this.state.token)
     console.log('redirect ' + this.state.redirect)
+
     if (this.state.redirect === 1) {
       this.props.history.push('/login')
+    } else if (this.state.redirect === 2) {
+      this.props.history.push('/register')
     }
+
     if (this.state.token) {
       return (
         <div>
@@ -38,11 +47,15 @@ class Home extends Component {
         </div>
       )
     }
+
     return (
-      <div>
+      <div className="">
         <h2 className="text-center primary">Home</h2>
         <button value="login" className="button float-center"
                 onClick={this.login.bind(this)}>Login
+        </button>
+        <button value="SignUp" className="button float-center"
+                onClick={this.signUp.bind(this)}>SignUp
         </button>
       </div>
     )
