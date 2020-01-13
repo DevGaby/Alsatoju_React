@@ -13,11 +13,17 @@ class Login extends Component {
     }
   }
 
+  /**
+   * Action derriere le bouton login
+   */
   login () {
     if (this.state.email && this.state.password) {
       CrudService('login', 'POST', this.state).then((result) => {
+        // Si le resultat de l'appel à le parametre token alors :
         if (result.token) {
+          // On enregistre le token
           sessionStorage.setItem('token', result.token)
+          // On autorise la redirection
           this.setState({ redirectToReferrer: true })
           console.log(result.token)
           this.props.history.push('/home')
@@ -26,6 +32,9 @@ class Login extends Component {
     }
   }
 
+  /**
+   * Autorise la redirection vers /home
+   */
   redirect () {
     this.setState({ redirectToReferrer: true })
   }
@@ -40,6 +49,7 @@ class Login extends Component {
   }
 
   render () {
+    // Si la redirection est autorisé ou l'utilisateur connecté alors :
     if (this.state.redirectToReferrer || sessionStorage.getItem('token')) {
       this.props.history.push('/home')
     }
