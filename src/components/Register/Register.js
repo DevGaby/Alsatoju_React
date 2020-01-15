@@ -10,6 +10,7 @@ class Register extends Component {
       email: 'ReactTestRegister@gmail.com',
       password: 'password',
       redirectToReferrer: false,
+      error: '',
     }
   }
 
@@ -25,7 +26,7 @@ class Register extends Component {
           console.log(result)
           this.props.history.push('/home')
         } else {
-          console.log('failed')
+          this.setState({ error: Error })
           console.log(result)
         }
       })
@@ -41,6 +42,7 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+
   render() {
     if (this.state.redirectToReferrer || sessionStorage.getItem('token')) {
       this.props.history.push('/home')
@@ -48,14 +50,21 @@ class Register extends Component {
 
     return (
       <div className="row small-up-2 medium-up-3 large-up-4">
-        <div className="column">
-          <h2>Register Page </h2>
-          <label>Email</label>
+        <div className="column medium-centered">
+          <h2 className="text-center">Register Page </h2>
+          {/* if il y a une erreur alors on affiche un text */}
+          { this.state.error !== '' &&
+            <h4 className="twoLightest">ERROR</h4>
+          }
           <input type="text" name="email" placeholder="Email"
             onChange={this.onChange.bind(this)} />
-          <label>Password</label>
           <input type="password" name="password" placeholder="Password"
             onChange={this.onChange.bind(this)} />
+          <input type="text" name="firstname" placeholder="Prénom"
+            onChange={this.onChange.bind(this)} />
+          <input type="text" name="lastname" placeholder="Nom"
+            onChange={this.onChange.bind(this)} />
+          
           <input type="submit" value="SignUp" className="button success"
             onClick={this.signUp.bind(this)} />
           <button className="button secondary" onClick={this.redirect.bind(this)}>Retour</button>

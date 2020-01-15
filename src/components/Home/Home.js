@@ -58,7 +58,7 @@ class Home extends Component {
       return (
         <div>
           <h2 className="text-center primary">Home</h2>
-          <button value="logout" className="button secondary float-center"
+          <button value="logout" className="button alert:hover float-center"
             onClick={this.logout.bind(this)}>Logout
           </button>
         </div>
