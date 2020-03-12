@@ -20,7 +20,7 @@ class Register extends Component {
 
   signUp() {
     if (this.state.email && this.state.password) {
-      CrudService('api/app_users', 'POST', this.state).then((result) => {
+      CrudService('app_users', 'POST', this.state).then((result) => {
         if (result.id) {
           this.setState({ redirectToReferrer: true })
           console.log(result)
