@@ -1,35 +1,23 @@
 import React, { Component } from 'react';
-
-import './styles/foundation.min.css';
-import './styles/custom.css';
-
-import Routes from './routes';
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import { Header, Footer, Description, Coaching, ListStories, Contact, Download} from './components';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      appName: "Alsatoju",
-    }
-  }
-
-  render () {
+  render() {
     return (
-      <div className="off-canvas-wrapper">
-        <div className="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-          <div className="off-canvas-content" data-off-canvas-content>
-            <Header />
-            <hr/>
-            <Routes />
-            <hr/>
-            <Footer />
-          </div>
+      <div className="App d-flex flex-column">
+       <Header />
+       <div className="d-flex flex-column flex-fill">
+        <Description />
+        <Coaching />
+        <ListStories />
+        <div className="d-flex flex-row">
+          <Contact />
+          <Download />
         </div>
       </div>
-    );
+       <Footer />
+     </div>
+    )
   }
 }
 

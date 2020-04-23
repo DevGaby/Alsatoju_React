@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import './Footer.css';
 
-class Footer extends Component {
-  render() {
-    return (
-      <div className="row two">
-        <div className="column">
-          <h1 className="text-center one">Footer</h1>
-        </div>
-      </div>
-    );
-  }
+export default class Footer extends Component {
+    render(){
+        return (
+        <footer className="blockquote-footer text-center">
+        <p className="text-muted">
+          2020@ALJASUTO |<a href="mailto:alsajuto@contact.com"> alsajuto@contact.com</a>
+           {/* <cite title="Source Title">Source Title</cite> */}
+        </p>
+      </footer>
+        );
+    }
 }
-
-export default Footer;
