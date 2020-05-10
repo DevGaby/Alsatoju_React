@@ -27,9 +27,8 @@ export default class Header extends Component {
                     <a className="nav-link" href="/"> Contact </a>
                 </li>
             </ul>
-
             </div>
         </header>
-    );
-}
+        );
+    } 
 }
