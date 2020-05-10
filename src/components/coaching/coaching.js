@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import couple from './../../asset/couple2.png';
+
 export default class Coaching extends Component {
     render(){
         return (
