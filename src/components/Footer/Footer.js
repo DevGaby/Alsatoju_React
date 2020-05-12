@@ -6,7 +6,7 @@ export default class Footer extends Component {
 
         <footer className="blockquote-footer text-center">
         <p className="text-muted"> 
-          <a> 2020@ALJASUTO |</a><a href="mailto:alsajuto@contact.com"> alsajuto@contact.com</a>
+           2020@ALJASUTO |<a href="mailto:alsajuto@contact.com"> alsajuto@contact.com</a>
         </p>
       </footer>
         );
