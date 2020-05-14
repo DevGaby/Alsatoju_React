@@ -4,5 +4,7 @@ export { default as ListStories } from './stories/list-stories';
 export { default as Contact } from './contact/contact';
 export { default as Download } from './download/download';
 export { default as Footer } from './footer/footer';
-export { default as Home } from './home/home';
 export { default as Header } from './header/header';
+export { default as Home } from './home/home';
+export { default as Login } from './home/login';
+export { default as Story } from './stories/story';

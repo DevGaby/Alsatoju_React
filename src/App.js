@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import { Home } from './components';
-import './index.css';
-// import { Description, Coaching, ListStories, Contact, Download, Header, Footer } from './components';
+import React, { Component, Fragment } from 'react';
+import { Description, Coaching, ListStories, Contact, Download, Header, Footer } from './components';
 
 class App extends Component {
-  render() {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     appName: "Alsatoju",
+  //     home: false
+  //   }
+  // }
+
+  render () {
     return (
-      <div className="App d-flex flex-column"> 
-      <Home /> 
-      {/* <Header />   
-        <div className="d-flex flex-column flex-fill">
-          <Description />
-          <Coaching />
-          <ListStories />
-          <div className="d-flex flex-row">
-            <Contact />
-            <Download />
+      <Fragment>
+         <div className="off-canvas-wrapper">
+            <Header />
+              <div className="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+                <Description />
+                <Coaching />
+                <ListStories />
+                <Contact />
+                <Download />
+              </div>
+            <Footer />
           </div>
-        </div>
-      <Footer /> */}
-     </div>
-    )
+      </Fragment>
+    );
   }
 }
 
