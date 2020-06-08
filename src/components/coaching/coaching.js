@@ -8,7 +8,7 @@ export default class Coaching extends Component {
                 <div className="row">
                     <div className="col-4">
                         <div className="card" > 
-                            <img className="card-img-top" style={{ width: 350,height: 500}} src={ couple } alt="logo"/>
+                            <img className="card-img-top" style={{ width: '100%', height: '100%'}} src={ couple } alt="logo"/>
                         </div> 
                     </div>
                     <div className="col-8">
