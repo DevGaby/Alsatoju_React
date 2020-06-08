@@ -22,3 +22,14 @@ export async function login (data) {
     throw handler(e)
   }
 }
+
+export async function getMe() {
+  try {
+    const res = await axios.get(constant.MY_PROFIL)
+    console.log('getMe :', res.data)
+    return res.data
+  } catch (e) {
+    console.log('Catch getMe() User: ' + e)
+    throw handler(e)
+  }
+}
