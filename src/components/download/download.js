@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import android from './../../asset/googlePlay.png';
 import ios from './../../asset/appleStores.png';
 import phone from './../../asset/smartphone.jpg';
-import { Link } from 'react-router-dom';
 
 export default class Download extends Component {
     render(){
@@ -20,12 +19,12 @@ export default class Download extends Component {
                 <img className="card-img-top rounded mx-auto d-block " style={{ width: 350 }} src={phone} alt="logo android"/>    
                 <div className="row text-center p-2">
                     <div className="col">
-                        <a target="_blank" href="https://play.google.com/store/apps?hl=fr">
+                        <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps?hl=fr">
                             <img className="card-img-top" src={android} alt="logo android" style={{ width: 200 }}/>
                         </a>  
                     </div>
                     <div className="col">
-                        <a target='_blank' href='https://www.apple.com/fr/ios/app-store/'>
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.apple.com/fr/ios/app-store/'>
                             <img className="card-img-top"  src={ios} alt="logo android" style={{ width: 200 }}/>
                         </a>
                     </div>
