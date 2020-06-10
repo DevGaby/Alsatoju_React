@@ -5,7 +5,7 @@ export default class Home extends Component{
     render(){
         return(
             <>
-                <div className="container-fluid d-flex w-100"> 
+                <div className="container-fluid d-flex w-100">
                     <div className="row">
                         <div className="col-md-6"> <Description/></div>
                         <div className="col-md-6"><Coaching /></div>

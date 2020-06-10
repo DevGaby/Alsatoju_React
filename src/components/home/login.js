@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { login, getMe } from '../../services/user'
-import Button from 'react-bootstrap/Button'
+import { Button } from 'react-bootstrap'
+import LoadingButton from './../LoadingButton/LoadingButton'
 import * as constant from '../../utils/constant'
 
 export default class Login extends Component {
@@ -30,7 +31,7 @@ export default class Login extends Component {
       sessionStorage.setItem(constant.TOKEN, token.token)
 
       alert('Bienvenue ' + user.firstName)
-      
+
       this.setState({ goToHome: true })
       this.setState({ isLoading: false })
     } catch (e) {
@@ -42,7 +43,7 @@ export default class Login extends Component {
 
   render() {
     if (this.state.goToHome) {
-      return <Redirect push to={'/'}></Redirect>
+      return <Redirect push to={'/'} />
     }
     if (sessionStorage.getItem('token')) {
       // return <Redirect push to={'/'}></Redirect>
@@ -66,9 +67,12 @@ export default class Login extends Component {
           </div>
 
           <div className="row">
-            <Button variant="outline-primary" block size="sm" value="Login" onClick={this.onClick.bind(this)}>
-              Login
+            { this.state.isLoading 
+            ? <LoadingButton variant="primary" />
+            : <Button variant="outline-primary" block size="sm" onClick={this.onClick.bind(this)} disabled={this.state.isLoading} >
+              Connexion
             </Button>
+            }
           </div>
 
         </div>
