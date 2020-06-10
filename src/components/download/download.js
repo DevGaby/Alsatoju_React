@@ -18,11 +18,15 @@ export default class Download extends Component {
                 </i> </p>
                 <img className="card-img-top rounded mx-auto d-block " style={{ width: 350 }} src={phone} alt="logo android"/>    
                 <div className="row text-center p-2">
-                    <div className="col"> 
-                        <img className="card-img-top" style={{ width: 200 }} src={android} alt="logo android"/>
+                    <div className="col">
+                        <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps?hl=fr">
+                            <img className="card-img-top" src={android} alt="logo android" style={{ width: 200 }}/>
+                        </a>  
                     </div>
-                    <div className="col"> 
-                        <img className="card-img-top" style={{ width: 200, height:60 }} src={ios} alt="logo ios"/>
+                    <div className="col">
+                        <a target='_blank' rel="noopener noreferrer" href='https://www.apple.com/fr/ios/app-store/'>
+                            <img className="card-img-top"  src={ios} alt="logo android" style={{ width: 200 }}/>
+                        </a>
                     </div>
                 </div>
             </div>

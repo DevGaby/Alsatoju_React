@@ -31,7 +31,10 @@ export default class Contact extends Component {
                         </div>
                     </div>
                     <div className="row p-2">
-                        <div className="col"> <textarea className="form-control" name="message" rows="9" cols="60"> Votre message... </textarea> </div> 
+                        <div className="col">
+                          <textarea className="form-control" name="message" rows="9" cols="60" placeholder="Votre message...">
+                          </textarea>
+                        </div> 
                     </div>
                     <div className="row p-2">
                         <div className="col"> <button className="col btn btn-outline-success btn-lg content-center" type="submit">ENVOYER</button> </div>
